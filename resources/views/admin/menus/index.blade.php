@@ -63,7 +63,8 @@
                                           onsubmit="return confirm('Jste si jistí?');">
                                         @csrf
                                         @method(('DELETE'))
-                                        <button type="submit">Smazat</button></form>
+                                        <button type="submit">Smazat</button>
+                                    </form>
                                 </div>
                             </th>
                         </tr>
