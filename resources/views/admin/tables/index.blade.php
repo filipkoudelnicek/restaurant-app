@@ -15,16 +15,16 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                         <th scope="col" class="px-6 py-3">
-                            Name
+                            Název
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Number of Guests
+                            Počet hostů
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Status
+                            Stav
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Location
+                            Lokace
                         </th>
                         <th scope="col" class="px-6 py-3">
                         </th>
