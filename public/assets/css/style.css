@@ -24,7 +24,10 @@
     bottom: 45px;
     z-index: 99;
 }
-
+.img-fluid {
+    max-width: auto;
+    height: auto;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -55,7 +58,7 @@
 }
 
 .btn-square {
-    width: 38px;
+    width: 250px;
     height: 38px;
 }
 
@@ -353,7 +356,7 @@
 /*** Team ***/
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    height: calc(100% - 38px);
+    height: 90%;
     transition: .5s;
 }
 

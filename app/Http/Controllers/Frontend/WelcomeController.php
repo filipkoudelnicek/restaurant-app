@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 class WelcomeController extends Controller
 {
     public function index(){
-        $test2 = Category::Where('name','test2')->first();
-        return view('welcome', compact('test2'));
+        $polevky = Category::Where('name', 'Polevky')->first();
+        $hlavni_jidla = Category::Where('name', 'Hlavní jídla')->first();
+        $dezerty = Category::Where('name', 'Dezerty')->first();
+
+        return view('welcome', compact('polevky', 'hlavni_jidla', 'dezerty'));
     }
 
 }
