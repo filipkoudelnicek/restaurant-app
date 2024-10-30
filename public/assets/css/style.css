@@ -376,6 +376,35 @@
     border-radius: 38px 38px 0 0;
 }
 
+/*** Categories ***/
+.categories-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    height: 90%;
+    transition: .5s;
+}
+
+.categories-item .img-fluid{
+    height: 205px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.categories-item img {
+    transition: .5s;
+}
+
+.categories-item:hover img {
+    transform: scale(1.1);
+}
+
+.categories-item:hover {
+    height: 100%;
+}
+
+.categories-item .btn {
+    border-radius: 38px 38px 0 0;
+}
+
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item,
