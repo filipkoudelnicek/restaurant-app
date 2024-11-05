@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->dateTime('reservation_date');
             $table->unsignedInteger('table_id');
-            $table->integer('guest_number');
+            $table->integer('number_of_guests');
             $table->timestamps();
         });
     }

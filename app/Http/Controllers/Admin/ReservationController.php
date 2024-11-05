@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ReservationStoreRequest;
 use App\Models\Reservation;
+use App\Models\Table;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -22,15 +24,18 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        return view('admin.reservations.create');
+        $tables = Table::all();
+        return view('admin.reservations.create', compact('tables'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ReservationStoreRequest $request)
     {
-        //
+        Reservation::create($request->validated());
+
+        return to_route('admin.reservations.index');
     }
 
     /**
@@ -44,7 +49,7 @@ class ReservationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Reservation $reservation)
     {
         $tables = Table::where('status', TableStatus::Volný)->get();
         return view('admin.reservations.edit', compact('reservation', 'tables'));
