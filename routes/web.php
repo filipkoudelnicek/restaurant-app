@@ -9,11 +9,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
-<<<<<<< Updated upstream
-Route::get('/', function () {
-    return view('welcome');
-});
-=======
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
 Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
