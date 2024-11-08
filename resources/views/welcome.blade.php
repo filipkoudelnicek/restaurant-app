@@ -97,7 +97,6 @@
         </div>
         <!-- About End -->
 
-
         <!-- Menu Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -296,6 +295,9 @@
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
                             </div>
                         </div>
                     </div>
