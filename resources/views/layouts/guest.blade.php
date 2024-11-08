@@ -172,7 +172,7 @@
                             </div>
                             <div class="col-md-6 text-center text-md-end">
                                 <div class="footer-menu">
-                                    <a href="">Domů</a>
+                                    <a href="/">Domů</a>
                                     <a href="">Cookies</a>
                                     <a href="">Pomoc</a>
                                     <a href="">FAQ</a>

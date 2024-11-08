@@ -509,3 +509,7 @@
     padding-right: 0;
     border-right: none;
 }
+
+.collapse{
+    visibility: unset!important;
+}

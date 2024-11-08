@@ -296,9 +296,6 @@
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
