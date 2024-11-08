@@ -17,26 +17,38 @@
                         <div class="sm:col-span-6">
                             <label for="title" class="block text-sm font-medium text-gray-700"> Název </label>
                             <div class="mt-1">
-                                <input type="text" id="name" name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                <input type="text" id="name" name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
+                            @error('name')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6">
                             <label for="title" class="block text-sm font-medium text-gray-700">Obrázek </label>
                             <div class="mt-1">
-                                <input type="file" id="image" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                <input type="file" id="image" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('image') border-red-400 @enderror" />
                             </div>
+                            @error('image')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="body" class="block text-sm font-medium text-gray-700">Cena</label>
                             <div class="mt-1">
-                                <input type="number" min="0.00" max="10000.00" step="1.00" id="price" name="price" class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base">
+                                <input type="number" min="0.00" max="10000.00" step="1.00" id="price" name="price" class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base @error('price') border-red-400 @enderror">
                             </div>
+                            @error('price')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="body" class="block text-sm font-medium text-gray-700">Popis</label>
                             <div class="mt-1">
-                                <textarea id="description" rows="3" name="description" class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                                <textarea id="description" rows="3" name="description" class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-400 @enderror"></textarea>
                             </div>
+                            @error('description')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="body" class="block text-sm font-medium text-gray-700">Kategorie</label>

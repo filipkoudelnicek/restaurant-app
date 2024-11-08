@@ -39,7 +39,7 @@ class CategoryController extends Controller
         'description'=> $request->description,
         'image'=> $image
     ]);
-    return to_route('admin.categories.index');
+    return to_route('admin.categories.index')->with('success', 'Kategorie byla úspěšně vytvořena');
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
             'description' => request('description'),
             'image' => $image
         ]);
-        return to_route('admin.categories.index');
+        return to_route('admin.categories.index')->with('success', 'Kategorie byla úspěšně upravena');
     }
 
     /**
@@ -89,6 +89,6 @@ class CategoryController extends Controller
         Storage::disk('public')->delete(str_replace('/storage/', '', $category->image));
         $category->delete();
 
-        return to_route('admin.categories.index');
+        return to_route('admin.categories.index')->with('danger', 'Kategorie byla úspěšně odstraněna');
     }
 }

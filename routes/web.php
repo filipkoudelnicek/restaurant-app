@@ -7,6 +7,10 @@ use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
+use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
+use App\Http\Controllers\Frontend\ReservationController as FrontendReservationController;
+
 use App\Http\Controllers\AdminController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
