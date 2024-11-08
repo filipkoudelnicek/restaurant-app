@@ -16,4 +16,7 @@ class WelcomeController extends Controller
         return view('welcome', compact('polevky', 'hlavni_jidla', 'dezerty'));
     }
 
+    public function thankyou(){
+        return view('thankyou');
+    }
 }

@@ -19,8 +19,10 @@ Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('c
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/reservation/step-one', [FrontendReservationController::class, 'stepOne'])->name('reservations.step.one');
+Route::post('/reservation/step-one', [FrontendReservationController::class, 'StorestepOne'])->name('reservations.store.step.one');
 Route::get('/reservation/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservations.step.two');
-
+Route::post('/reservation/step-two', [FrontendReservationController::class, 'StorestepTwo'])->name('reservations.store.step.two');
+Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

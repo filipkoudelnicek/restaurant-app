@@ -65,22 +65,37 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        $tables = Table::where('status', TableStatus::Volný)->get();
+        return view('admin.reservations.edit', compact('reservation', 'tables'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ReservationStoreRequest $request, Reservation $reservation)
     {
-        //
+        $table = Table::findOrFail($request->table_id);
+        if ($request->number_of_guests > $table->number_of_guests) {
+            return back()->with('warning', 'Prosím vyberte stůl podle počtu lidí!');
+        }
+        $request_date = Carbon::parse($request->reservation_date);
+        $reservation = $table->reservations()->where('id', '!=', $reservation->id)->get();
+        foreach($reservation as $reservation) {
+            if (Carbon::parse($reservation->reservation_date)->format('Y-m-d') == $request_date->format('Y-m-d')) {
+                return back()->with('warning', 'Tento stůl je pro tento den již zarezervovaný!');
+            }
+        }
+        $reservation->update($request->validated());
+        return to_route('admin.reservations.index')->with('success', 'Rezervace byla úspěšně upravena');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+
+        return to_route('admin.reservations.index')->with('success', 'Rezervace byla úspěšně smazána');
     }
 }
